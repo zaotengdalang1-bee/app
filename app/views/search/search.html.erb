@@ -1,0 +1,29 @@
+
+<% if @messages.present? %>
+    <table>
+        <thead>
+          <tr>
+              <th>  タイトル </th>
+              <th>  日時 </th>
+              <th>  本文 </th>
+           </tr>
+       </thead>
+       <tbody>
+          
+          
+             <tr>
+               <td><%= @message1 %></td>
+               <td><%= @message2 %></td>
+               <td>
+                   
+                       <%= @messages.join("\n") %>
+                        
+                   
+               </td>
+            </tr>
+
+         
+       </tbody>
+   </table>
+
+<% end %>

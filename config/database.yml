@@ -1,0 +1,25 @@
+
+#チャットgptから抜粋
+
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres   # ローカルの PostgreSQL ユーザー名 デフォルト
+  password: Dalangzaoteng@2005       #自分が設定したもの
+  host: localhost
+  pool: 5
+
+development:
+  <<: *default
+  database: app_development
+
+test:
+  <<: *default
+  database: app_test
+
+production:
+  <<: *default
+  database: app_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
